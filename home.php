@@ -1,9 +1,7 @@
 <html>
     <head>
         <?php include 'connection.php';?>
-        <?php $sql = "SELECT * FROM assignment_4";
-        $result = $conn->query($sql);
-        ?>
+        
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -28,19 +26,24 @@
                     <th style = "width: 20% "> Edit </th>
                     <th style = "width: 20% "> Delete </th>
                 </thead>
-                <tbody>
-                    <?php if ($result->num_row>0){
-                        while($row = $result->fetch_assoc()){
+                <tbody><?php
+                    $sql = "SELECT * FROM `category`";
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
 
                         echo '<tr>';
                             echo '<td>'.$row['cat_id'].'</td>';
                             echo '<td>'.$row['category_name'].'</td>';
-                            echo '<td>'.'<input type = "button" id = "ed1" value = "Edit">'.'</td>';
-                            echo '<td>'.'<input type = "button" id = "del1" value = "Delete">'.'</td>';
+                            
+                            echo '<td>';
+                            echo '<a href="update_cat.php?id=' . $row['cat_id'] . '" class="btn-info bt">'.'<button id = "ed1"> Edit </button>'.'</a>';
+                            echo '</td>';
+                            echo '<td>';
+                            echo '<a href="delete_cat.php?id=' . $row['cat_id'] . '"class="btn-danger bt">'.'<button id = "del1">Delete</button>'.'</a>';
+                            echo '</td>';
                         echo '</tr>';
                         
                         }
-                    }
                         
                 
                     ?>

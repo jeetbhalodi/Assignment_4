@@ -20,8 +20,8 @@
 
         <div class = add_cat>
             <div class = form_add_cat>
-                    <form class = "add_cat_fm">
-                            <input type = "text" id = "add_cat_txt"><br>
+                    <form class = "add_cat_fm" action = "insert_cat.php" >
+                            <input type = "text" id = "cat_name" name = "cat_name"><br>
                             <button type = "submit" id = "add_cat_btn"> Submit </button>
                     </form>
             </div>
