@@ -1,141 +1,10 @@
 <html>
     <head>
         <?php include 'connection.php';?>
-        <style>
-/*set color of background of nav bar*/
-            .topnav {
-                        background-color: #FFD580;
-                        overflow: hidden;
-                    }
-
-/* Style the links inside the navigation bar */
-            .topnav a {
-                        float: left;
-                        color: #818080;
-                        text-align: center;
-                        padding: 14px 16px;
-                        text-decoration: none;
-                        font-size: 17px;
-                      }
-
-/* Change the color of links on hover */
-           .topnav a:hover {
-                        background-color: #ff8100;
-                        color: black;
-                        }
-
-/* Add a color to the active/current link */
-            .topnav a.active {
-                    background-color: #fb7505;
-                    color: white;
-            }
-            
-/*give banner height and back ground img */
-            .banner{
-                background-color: #f9c69b;
-                height: 200px;
-                width: 100%; 
-            }
-            .move{
-                font-size:80px;
-            }
-
-/* Footer */
-
-        footer{
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            background: #f9c69b;
-        }
-        .main-content{
-            display: flex;
-        }
-
-        .main-content .box{
-            flex-basis: 50%;
-            padding: 10px 20px;
-            color: #818080;
-        }
-        .box h2{
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .box .content{
-            margin: 20px 0 0 0;
-        }
-
-        .left .content .social{
-            margin: 20px 0 0 0;
-            
-        }
-
-        .left .content .social a{
-            padding: 0 2px;
-            color: white;
-        }
-        .left .content .social a span{
-            height: 40px;
-            width: 40px;
-            line-height: 40px;
-            text-align: center;
-        }
-        .cpy{
-            text-align: center;
-            color: #000;
-        }
-/*footer css over */
-
-/*for table*/
-        #add-row{
-            border:2px solid black;
-            margin-left: auto;
-            margin-right: auto;
-            width : 50%;
-            border-radius: 10px;
-            color:orange;
-        }
-        
-        td{
-            text-align:center;
-            color : black;
-        }
-
-        tr{
-            border:2px solid black;
-        }
-/*edit button*/
-        #ed1{
-            background-color: #008CBA; 
-            border: solid;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 25px;
-        }
-
-/*delete button*/
-        #del1{
-            background-color: #f44336; 
-            border: solid;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 25px;
-        }
-
-        </style>
+        <?php $sql = "SELECT * FROM assignment_4";
+        $result = $conn->query($sql);
+        ?>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -160,13 +29,18 @@
                     <th style = "width: 20% "> Delete </th>
                 </thead>
                 <tbody>
-                    <?php 
+                    <?php if ($result > 0){
+                        while($row = $result->fetch_assoc()){
+
                         echo '<tr>';
-                        echo '<td>'.'1'.'</td>';
-                        echo '<td>'.'Jeans'.'</td>';
-                        echo '<td>'.'<input type = "button" id = "ed1" value = "Edit">'.'</td>';
-                        echo '<td>'.'<input type = "button" id = "del1" value = "Delete">'.'</td>';
+                            echo '<td>'.$row['cat_id'].'</td>';
+                            echo '<td>'.$row['category_name'].'</td>';
+                            echo '<td>'.'<input type = "button" id = "ed1" value = "Edit">'.'</td>';
+                            echo '<td>'.'<input type = "button" id = "del1" value = "Delete">'.'</td>';
                         echo '</tr>';
+                        
+                        }
+                    }
                         
                 
                     ?>
