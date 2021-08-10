@@ -1,6 +1,7 @@
 <html>
     <head>
         <?php include 'connection.php';?>
+    
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -25,14 +26,19 @@
                         <tr>
                         <th>ID</th>
                         <th>Catogary_name</th>
-                        
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><form action=""><input type="number" name="id_cat" id="id_cat"></form></td>
-                            <td><form action=""><input type="text" name="cat_update" id="cat_update"></form></td>
-                            
+                            <?php
+                           echo'<td>'.'<form action="###">';
+                           echo'<input type="number" name="id_cat" id="id_cat">';
+                           echo'</td>';
+                           echo'<td>';
+                           echo'<input type="text" name="cat_update" id="cat_update">';
+                           echo'</form>';
+                           echo'</td>';
+                            ?>
                         </tr>
                     </tbody>
                 </table>    
