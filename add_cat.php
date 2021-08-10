@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="cpy">
-                <p >Created By @iSportsInfo |  ©2021 All Rights Reserved.</p>
+                <p >Created By @jeet_bhalodi |  ©2021 All Rights Reserved.</p>
             </div>
         </footer>
 

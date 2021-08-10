@@ -1,9 +1,6 @@
 <html>
     <head>
         <?php include 'connection.php';?>
-        <?php $sql = "SELECT * FROM assignment_4";
-        $result = $conn->query($sql);
-        ?>
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -17,37 +14,30 @@
         <br>
    
         <div class="banner">
-            <marquee>  <h1 class="move"> HELLO!!!! This is CRUD Operation of PHP... </h1> </marquee>
+            <marquee>  <h1 class="move"> HELLO!!!! This is page for Update Catogary... </h1> </marquee>
         </div>
         <br>
-        <div>
-            <table  style="border:2px solid black; " id = "add-row" class = "display table table-striped table-hover">
-                <thead>
-                    <th> ID </th>
-                    <th> Catogary Name </th>
-                    <th style = "width: 20% "> Edit </th>
-                    <th style = "width: 20% "> Delete </th>
-                </thead>
-                <tbody>
-                    <?php if ($result->num_row>0){
-                        while($row = $result->fetch_assoc()){
 
-                        echo '<tr>';
-                            echo '<td>'.$row['cat_id'].'</td>';
-                            echo '<td>'.$row['category_name'].'</td>';
-                            echo '<td>'.'<input type = "button" id = "ed1" value = "Edit">'.'</td>';
-                            echo '<td>'.'<input type = "button" id = "del1" value = "Delete">'.'</td>';
-                        echo '</tr>';
+        <div class = "update_cat">
+            <div class = "update_cat">
+                <table class = "update_cat_tb">
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Catogary_name</th>
                         
-                        }
-                    }
-                        
-                
-                    ?>
-
-
-                </tbody>
-            </table>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><form action=""><input type="number" name="id_cat" id="id_cat"></form></td>
+                            <td><form action=""><input type="text" name="cat_update" id="cat_update"></form></td>
+                            
+                        </tr>
+                    </tbody>
+                </table>    
+                <P class="update_btn_p"><button type = "submit" id = "update_btn"> Update </button></p>                
+            </div>
         </div>
 
 

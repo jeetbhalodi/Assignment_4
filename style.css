@@ -44,6 +44,7 @@ bottom: 0px;
 width: 100%;
 background: #f9c69b;
 }
+
 .main-content{
 display: flex;
 }
@@ -58,6 +59,7 @@ font-size: 1.125rem;
 font-weight: 600;
 text-transform: uppercase;
 }
+
 .box .content{
 margin: 20px 0 0 0;
 }
@@ -129,4 +131,77 @@ font-size: 16px;
 margin: 4px 2px;
 cursor: pointer;
 border-radius: 25px;
+}
+
+
+/*add_catagory */
+
+.add_cat{
+    border: 2px solid black;
+    height: 100px;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+
+.add_cat_fm{
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+#add_cat_txt{
+    border: 1px solid black;
+    height: 30px;
+    background-color:whitesmoke;
+}
+
+#add_cat_btn{
+    
+    background-color: green; 
+    border: solid;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;   
+}
+
+/*update page*/
+.update_cat_tb{
+    padding: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#update_btn{
+    margin-left: 50%;
+    background-color: green; 
+    border: solid;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px; 
+}
+
+.update_btn_p{
+    text-align: center;
+
+}
+
+.update_cat{
+    border: 2px solid black;
+    height: 150px;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 20px;
 }
