@@ -39,7 +39,6 @@ font-size:80px;
 /* Footer */
 
 footer{
-position: fixed;
 bottom: 0px;
 width: 100%;
 background: #f9c69b;
@@ -103,6 +102,8 @@ color : black;
 tr{
 border:2px solid black;
 }
+
+
 /*edit button*/
 #ed1{
 background-color: #008CBA; 
@@ -175,7 +176,6 @@ border-radius: 25px;
 
 /*update page*/
 .update_cat_tb{
-    padding: auto;
     margin-left: auto;
     margin-right: auto;
 }

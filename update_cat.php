@@ -1,6 +1,13 @@
 <html>
     <head>
         <?php include 'connection.php';?>
+        <?php
+            $id = $_GET['id'];
+            $sql = 'SELECT category_name FROM category WHERE cat_id = '.$id;
+
+            $result = $conn->query($sql);
+            $row = mysqli_fetch_array($result);
+        ?>
     
         <link rel="stylesheet" href="style.css">
     </head>
@@ -31,18 +38,22 @@
                     <tbody>
                         <tr>
                             <?php
-                           echo'<td>'.'<form action="###">';
-                           echo'<input type="number" name="id_cat" id="id_cat">';
+                           echo'<td>'.'<form action="edit_cat.php?id=" method = "POST">';
+                           echo'<input type="number" name="id_cat" value="'.$id.'" id="id_cat" readonly>';
                            echo'</td>';
                            echo'<td>';
-                           echo'<input type="text" name="cat_update" id="cat_update">';
-                           echo'</form>';
+                           echo'<input type="text" name="cat_update" value ="'.$row['category_name'].'" id="cat_update" style = "margin">';
+                           
                            echo'</td>';
                             ?>
                         </tr>
+                        <tr >
+                            <td colspan = "2" ><center><button type = "submit" id = "update_btn"> Update </button></center></td>
+                           <?php echo'</form>';?>
+                        </tr>
+                    
                     </tbody>
-                </table>    
-                <P class="update_btn_p"><button type = "submit" id = "update_btn"> Update </button></p>                
+                </table>                  
             </div>
         </div>
 

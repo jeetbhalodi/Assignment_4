@@ -18,7 +18,7 @@
             <marquee>  <h1 class="move"> HELLO!!!! This is CRUD Operation of PHP... </h1> </marquee>
         </div>
         <br>
-        <div>
+        <div class = "mrg_tbl" style="margin-bottom: 80px;">
             <table  style="border:2px solid black; " id = "add-row" class = "display table table-striped table-hover">
                 <thead>
                     <th> ID </th>
@@ -53,9 +53,11 @@
             </table>
         </div>
 
+    
 
 
-        <footer>
+
+       <footer>
             
             <div class="cpy">
                 <p >Created By @jeet_bhalodi |  ©2021 All Rights Reserved.</p>
