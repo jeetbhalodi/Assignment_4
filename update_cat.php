@@ -14,8 +14,8 @@
 
     <body>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">ADD </a>
+            <a class="active" href="home.php">Home</a>
+            <a href="add_cat.php">ADD </a>
             <a href="#contact">EDIT</a>
             <a href="#about">About</a>
         </div>
@@ -38,7 +38,7 @@
                     <tbody>
                         <tr>
                             <?php
-                           echo'<td>'.'<form action="edit_cat.php?id=" method = "POST">';
+                           echo'<td>'.'<form action="edit_cat.php?id=" method = "POST" onsubmit="return validate1()">';
                            echo'<input type="number" name="id_cat" value="'.$id.'" id="id_cat" readonly>';
                            echo'</td>';
                            echo'<td>';
@@ -46,6 +46,9 @@
                            
                            echo'</td>';
                             ?>
+                        </tr>
+                        <tr>
+                            <td colspan = "2"><span id="err1"></span></td>
                         </tr>
                         <tr >
                             <td colspan = "2" ><center><button type = "submit" id = "update_btn"> Update </button></center></td>
@@ -65,7 +68,7 @@
                 <p >Created By @jeet_bhalodi |  ©2021 All Rights Reserved.</p>
             </div>
         </footer>
-
+        <script src="validation.js"></script>
     </body>
 
 

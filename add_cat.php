@@ -6,8 +6,8 @@
 
     <body>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">ADD </a>
+            <a class="active" href="home.php">Home</a>
+            <a href="add_cat.php">ADD </a>
             <a href="#contact">EDIT</a>
             <a href="#about">About</a>
         </div>
@@ -20,8 +20,10 @@
 
         <div class = add_cat>
             <div class = form_add_cat>
-                    <form class = "add_cat_fm" action = "insert_cat.php" >
-                            <input type = "text" id = "cat_name" name = "cat_name"><br>
+                    <form class = "add_cat_fm" action = "insert_cat.php" onsubmit="return validate1()">
+                            <h3>Plase insert here category.</h3> <br>
+                            <input type = "text" id = "cat_update"  name = "cat_update"><br>
+                            <span id="err1"></span><br>
                             <button type = "submit" id = "add_cat_btn"> Submit </button>
                     </form>
             </div>
@@ -35,7 +37,7 @@
                 <p >Created By @jeet_bhalodi |  ©2021 All Rights Reserved.</p>
             </div>
         </footer>
-
+        <script src="validation.js"></script>
     </body>
 
 

@@ -7,8 +7,8 @@
 
     <body>
         <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">ADD </a>
+        <a class="active" href="home.php">Home</a>
+            <a href="add_cat.php">ADD </a>
             <a href="#contact">EDIT</a>
             <a href="#about">About</a>
         </div>
@@ -18,6 +18,13 @@
             <marquee>  <h1 class="move"> HELLO!!!! This is CRUD Operation of PHP... </h1> </marquee>
         </div>
         <br>
+        <br>
+        <div>
+            <center>
+            <h3> If you want to add Catogary then Click here. </h3>
+            <a href="add_cat.php"><button class = "add_btn">Add Category</button></a> 
+            </center>
+        </div>
         <div class = "mrg_tbl" style="margin-bottom: 80px;">
             <table  style="border:2px solid black; " id = "add-row" class = "display table table-striped table-hover">
                 <thead>
