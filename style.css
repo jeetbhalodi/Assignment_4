@@ -81,6 +81,8 @@ text-align: center;
 .cpy{
 text-align: center;
 color: #000;
+position: fixed;
+bottom: 0;
 }
 /*footer css over */
 

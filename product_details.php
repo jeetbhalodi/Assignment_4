@@ -21,32 +21,38 @@
         <br>
         <div>
             <center>
-            <h3> If you want to add Catogary then Click here. </h3>
-            <a href="add_cat.php"><button class = "add_btn">Add Category</button></a> 
+            <h3> If you want to add Product then Click here. </h3>
+            <a href="add_product.php"><button class = "add_btn">Add product</button></a> 
             </center>
         </div>
         <div class = "mrg_tbl" style="margin-bottom: 80px;">
-            <table  style="border:2px solid black; " id = "add-row" class = "display table table-striped table-hover">
+            <table  style="border:2px solid black; width:100%" id = "add-row" class = "display table table-striped table-hover">
                 <thead>
                     <th> ID </th>
-                    <th> Catogary Name </th>
+                    <th> Name </th>
+                    <th> Price </th>
+                    <th> Photo </th>
+                    <th> Category </th>
                     <th style = "width: 20% "> Edit </th>
                     <th style = "width: 20% "> Delete </th>
                 </thead>
                 <tbody><?php
-                    $sql = "SELECT * FROM `category`";
+                    $sql = "SELECT p.product_id,p.product_name,p.product_price,p.product_img,c.category_name FROM product p, category c WHERE p.cat_id = c.cat_id";
                     $result = mysqli_query($conn, $sql);
                     while($row = mysqli_fetch_assoc($result)){
 
                         echo '<tr>';
-                            echo '<td>'.$row['cat_id'].'</td>';
+                            echo '<td>'.$row['product_id'].'</td>';
+                            echo '<td>'.$row['product_name'].'</td>';
+                            echo '<td>'.$row['product_price'].'</td>';
+                            echo '<td><img src="localhost/assignment_4/'.$row['product_img'].'"/></td>';
                             echo '<td>'.$row['category_name'].'</td>';
                             
                             echo '<td>';
-                            echo '<a href="update_cat.php?id=' . $row['cat_id'] . '" class="btn-info bt">'.'<button id = "ed1"> Edit </button>'.'</a>';
+                            echo '<a href="edit_product.php?id=' . $row['product_id'] . '" class="btn-info bt">'.'<button id = "ed1"> Edit </button>'.'</a>';
                             echo '</td>';
                             echo '<td>';
-                            echo '<a href="delete_cat.php?id=' . $row['cat_id'] . '"class="btn-danger bt">'.'<button id = "del1">Delete</button>'.'</a>';
+                            echo '<a href="remove_product.php?id=' . $row['product_id'] . '"class="btn-danger bt">'.'<button id = "del1">Delete</button>'.'</a>';
                             echo '</td>';
                         echo '</tr>';
                         
@@ -64,9 +70,9 @@
 
 
 
-       <footer>
+       <footer class="cpy">
             
-            <div class="cpy">
+            <div >
                 <p >Created By @jeet_bhalodi |  ©2021 All Rights Reserved.</p>
             </div>
         </footer>
